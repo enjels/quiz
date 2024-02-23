@@ -30,7 +30,9 @@ const Question = () => {
             key={option}
             option={option}
             selectOption={() => onSelectOption(option)}
+            answer={currentQuestion.answer}
           />
+          
         ))}
       </div>
       {quizState.answerSelected && (
