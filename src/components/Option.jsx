@@ -6,7 +6,7 @@ import "./Option.css"
 const Option = ({option}) => {
     const [quizState, dispatch] = useContext(QuizContext)
 
-    return <div>
+    return <div className="option">
         <p>{option}</p>
   </div>;
 };
