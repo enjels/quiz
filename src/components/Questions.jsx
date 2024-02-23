@@ -17,7 +17,7 @@ const Question = () => {
       },
     });
   };
-  console.log(quizState)
+  console.log(quizState);
 
   return (
     <div id="question">
@@ -33,15 +33,17 @@ const Question = () => {
             selectOption={() => onSelectOption(option)}
             answer={currentQuestion.answer}
           />
-
         ))}
       </div>
-      {!quizState.answer(
+      {!quizState.answerSelected && !quizState.help && (
         <>
           {currentQuestion.tip && (
-            <button>Dica</button>
+            <button onClick={() => dispatch({ type: "SHOW_TIP" })}>Dica</button>
           )}
         </>
+      )}
+      {!quizState.answerSelected && quizState.help === "tip" && (
+        <p>{currentQuestion.tip}</p>
       )}
       {quizState.answerSelected && (
         <button onClick={() => dispatch({ type: "CHANGE_QUESTION" })}>
