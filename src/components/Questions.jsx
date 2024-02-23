@@ -1,5 +1,5 @@
 // Question.js
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { QuizContext } from "../context/quiz";
 import "./Question.css";
 import Option from "./Option";
@@ -17,6 +17,7 @@ const Question = () => {
       },
     });
   };
+  console.log(quizState)
 
   return (
     <div id="question">
@@ -32,9 +33,16 @@ const Question = () => {
             selectOption={() => onSelectOption(option)}
             answer={currentQuestion.answer}
           />
-          
+
         ))}
       </div>
+      {!quizState.answer(
+        <>
+          {currentQuestion.tip && (
+            <button>Dica</button>
+          )}
+        </>
+      )}
       {quizState.answerSelected && (
         <button onClick={() => dispatch({ type: "CHANGE_QUESTION" })}>
           Continuar
