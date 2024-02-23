@@ -32,6 +32,7 @@ const Question = () => {
             option={option}
             selectOption={() => onSelectOption(option)}
             answer={currentQuestion.answer}
+            hide={quizState.optionToHide === option ? "hide" : null}
           />
         ))}
       </div>

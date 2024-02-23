@@ -17,7 +17,10 @@
   background-color: #0bfc03;
   font-weight: bold;
 }
-.wrong{
+.wrong {
   background-color: #3c0e70;
   opacity: 0.4;
+}
+.hide{
+  display: none;
 }
